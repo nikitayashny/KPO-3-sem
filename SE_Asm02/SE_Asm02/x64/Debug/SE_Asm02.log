@@ -1,0 +1,31 @@
+﻿Сборка начата 02.10.2022 13:45:42.
+Уровень детализации журнала: Normal.     1>Проект "C:\Users\User\Desktop\КПО\SE_Asm02\SE_Asm02\SE_Asm02.vcxproj" в узле 2 (целевые объекты Build).
+     1>InitializeBuildStatus:
+         Обращение к "x64\Debug\SE_Asm02.tlog\unsuccessfulbuild".
+       _MASM:
+         Assembling LP_asm.asm...
+         cmd.exe /C "C:\Users\User\AppData\Local\Temp\tmpa278c0b01bdb4384baad4a96344be2a3.cmd"
+         ml64.exe /c /nologo /Zi /Fo"x64\Debug\LP_asm.obj" /Fl"x64\Debug\\" /W3 /errorReport:prompt  /TaLP_asm.asm
+     1>LP_asm.asm(1): error A2008: syntax error : .
+     1>LP_asm.asm(2): error A2008: syntax error : .
+     1>LP_asm.asm(3): error A2008: syntax error : .
+     1>LP_asm.asm(22): error A2008: syntax error : start
+     1>LP_asm.asm(22): error A2088: END directive required at end of file
+     1>C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: выход из команды "ml64.exe /c /nologo /Zi /Fo"x64\Debug\LP_asm.obj" /Fl"x64\Debug\\" /W3 /errorReport:prompt  /TaLP_asm.asm" с кодом "1".
+     1>Сборка проекта "C:\Users\User\Desktop\КПО\SE_Asm02\SE_Asm02\SE_Asm02.vcxproj" завершена (целевые объекты Build) с ошибкой.
+
+Ошибка сборки.
+
+       "C:\Users\User\Desktop\КПО\SE_Asm02\SE_Asm02\SE_Asm02.vcxproj" (целевой объект Build ) (1) ->
+       (Целевой объект _MASM) -> 
+         LP_asm.asm(1): error A2008: syntax error : .
+         LP_asm.asm(2): error A2008: syntax error : .
+         LP_asm.asm(3): error A2008: syntax error : .
+         LP_asm.asm(22): error A2008: syntax error : start
+         LP_asm.asm(22): error A2088: END directive required at end of file
+         C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\BuildCustomizations\masm.targets(70,5): error MSB3721: выход из команды "ml64.exe /c /nologo /Zi /Fo"x64\Debug\LP_asm.obj" /Fl"x64\Debug\\" /W3 /errorReport:prompt  /TaLP_asm.asm" с кодом "1".
+
+    Предупреждений: 0
+    Ошибок: 6
+
+Прошло времени 00:00:00.16

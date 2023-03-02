@@ -1,0 +1,100 @@
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    10/02/22 22:49:38
+LP_asm.asm						     Page 1 - 1
+
+
+				.586
+				.MODEL FLAT, STDCALL
+				includelib kernel32.lib
+				includelib user32.lib
+
+				ExitProcess PROTO : DWORD
+				MessageBoxA PROTO : DWORD, : DWORD, : DWORD, : DWORD
+
+				.STACK 4096
+
+ 00000000			.CONST
+
+ 00000000			.DATA
+ = 00000000			MB_OK EQU 0
+ 00000000 C2 F2 EE F0 E0	STR1 DB "Вторая лабораторная работа", 0
+	   FF 20 EB E0 E1
+	   EE F0 E0 F2 EE
+	   F0 ED E0 FF 20
+	   F0 E0 E1 EE F2
+	   E0 00
+ 0000001B D0 E5 E7 F3 EB	STR2 DB "Результат сложения чисел =  ", 0
+	   FC F2 E0 F2 20
+	   F1 EB EE E6 E5
+	   ED E8 FF 20 F7
+	   E8 F1 E5 EB 20
+	   3D 20 20 00
+ 00000038 01			BUF DB 1
+ 00000039 00000000		HW DD ?
+
+ 00000000			.CODE
+ 00000000			main PROC
+ 00000000			sumNumbers: 
+ 00000000  B0 01			mov al, 1h
+ 00000002  04 02			add al, 2h
+
+ 00000004			outputMessage:
+ 00000004  BB 0000001B			mov ebx, LENGTHOF STR2 - 2
+ 00000009  04 30			add al, 30h
+ 0000000B  88 83 0000001B R		mov [STR2 + ebx],  al
+
+					INVOKE	MessageBoxA, HW, OFFSET STR2, OFFSET STR1, MB_OK
+
+ 00000028  6A 00		push 0
+ 0000002A  E8 00000000 E	call ExitProcess
+
+ 0000002F			main ENDP
+				end main
+Microsoft (R) Macro Assembler Version 14.30.30706.0	    10/02/22 22:49:38
+LP_asm.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CONST  . . . . . . . . . . . . .	32 Bit	 00000000 Para	  Public  'CONST'	 ReadOnly
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 Para	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000003D Para	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 0000002F Para	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+MessageBoxA  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 0000002F Public STDCALL
+  sumNumbers . . . . . . . . . .	L Near	 00000000 _TEXT	
+  outputMessage  . . . . . . . .	L Near	 00000004 _TEXT	
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+BUF  . . . . . . . . . . . . . .	Byte	 00000038 _DATA	
+HW . . . . . . . . . . . . . . .	DWord	 00000039 _DATA	
+MB_OK  . . . . . . . . . . . . .	Number	 00000000h   
+STR1 . . . . . . . . . . . . . .	Byte	 00000000 _DATA	
+STR2 . . . . . . . . . . . . . .	Byte	 0000001B _DATA	
+
+	   0 Warnings
+	   0 Errors

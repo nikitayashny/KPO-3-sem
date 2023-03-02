@@ -1,0 +1,43 @@
+Microsoft (R) Macro Assembler (x64) Version 14.30.30706.0   10/02/22 13:45:42
+LP_asm.asm						     Page 1 - 1
+
+
+				.586
+LP_asm.asm(1) : error A2008:syntax error : .
+				.MODEL flat
+LP_asm.asm(2) : error A2008:syntax error : .
+				.STACK 100h
+LP_asm.asm(3) : error A2008:syntax error : .
+
+ 00000000			.DATA
+
+ 00000000			.CODE
+
+ 00000000			start: 
+
+ 00000000  B4 02				mov ah, 2
+ 00000002  B0 04				mov al, 4
+ 00000004  02 E0				add ah, al
+
+ 00000006  B4 08				mov ah, 8h
+ 00000008  CD 21				int 21h
+
+ 0000000A  B4 4C				mov ah, 4Ch
+ 0000000C  B0 00				mov al, 00h
+ 0000000E  CD 21				int 21h
+
+				end start
+Microsoft (R) Macro Assembler (x64) Version 14.30.30706.0   10/02/22 13:45:42
+LP_asm.asm						     Symbols 2 - 1
+
+
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+start  . . . . . . . . . . . . .	L 	 00000000 _TEXT	
+
+	   0 Warnings
+	   5 Errors
